@@ -1,0 +1,89 @@
+<p>
+    <label>Name</label>
+    {{input value=name}}
+</p>
+<p>
+    <label>Look</label>
+    {{input value=look}}
+</p>
+<p>
+    <label>Total XP</label>
+    {{input value=totalXp}}
+</p>
+
+<h2>Suits</h2>
+{{#each suit in suits}}
+{{#with suit}}
+    <h3>{{name}}</h3>
+    <div>
+        {{input type="checkbox" checked=ace.check1}} &raquo;
+        {{input type="checkbox" checked=ace.check2 disabled=ace.check2Disabled}} Ace: 11
+    </div>
+    {{#each faceCard in faceCards}}
+    <div>
+        {{faceCard.name}}:
+        {{! Value track }}
+        {{! Need to turn highest-checked-box into value somehow. }}
+        {{input type="checkbox"}} 5 &raquo;
+        {{input type="checkbox"}} 6 &raquo;
+        {{input type="checkbox"}} 7 &raquo;
+        {{input type="checkbox"}} 8 &raquo;
+        {{input type="checkbox"}} 9 &raquo;
+        {{input type="checkbox"}} 10
+        <br>
+        {{! Powers: need to do checkboxes }}
+        {{input value=faceCard.power1}}
+        {{input value=faceCard.power2}}
+        {{input value=faceCard.power3}}
+    </div>
+    {{/each}}
+    <div>
+    Base Cards:
+    {{! Value track }}
+    {{! Need to turn highest-checked-box into value somehow. }}
+    {{input type="checkbox"}} 5 &raquo;
+    {{input type="checkbox"}} 6 &raquo;
+    {{input type="checkbox"}} 7 &raquo;
+    {{input type="checkbox"}} 8 &raquo;
+    {{input type="checkbox"}} 9 &raquo;
+    {{input type="checkbox"}} 10
+    </div>
+{{/with}}
+{{/each}}
+
+<h2>Skills</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Apt</th>
+            <th>Edu</th>
+            <th>Exp</th>
+            <th></th>
+            <th>Acc</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each skillgroup in skillGroups}}
+        {{#with skillgroup}}
+        <tr>
+            <td colspan="6">
+                <h3>{{name}}</h3>
+            </td>
+        </tr>
+            {{#each skill in skills}}
+            {{#with skill}}
+            <tr>
+                <td>{{name}}:</td>
+                <td>{{input type="checkbox" checked=apt}}</td>
+                <td>{{input type="checkbox" checked=edu}}</td>
+                <td>{{input type="checkbox" checked=exp}}</td>
+                <td>&ge;</td>
+                <td>{{input type="checkbox" checked=acc disabled=accDisabled}}</td>
+            </tr>
+            {{/with}}
+            {{/each}}
+        {{/with}}
+        {{/each}}
+    </tbody>
+</table>
