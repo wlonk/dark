@@ -35,17 +35,20 @@
                         <div class="face-card">
                             {{faceCard.name}}:
                             {{number-checks model=faceCard min=4 max=10}}
-                            <div class="input-group">
-                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasPower1 disabled=true}}</div>
-                                {{input value=faceCard.power1 class="form-control"}}
+                            <div {{bind-attr class="faceCard.cannotHaveAbility:hidden"}}>
+                                {{input value=faceCard.ability disabled=faceCard.cannotHaveAbility class="form-control"}}
                             </div>
-                            <div class="input-group">
-                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasPower2 disabled=true}}</div>
-                                {{input value=faceCard.power2 class="form-control"}}
+                            <div {{bind-attr class=":input-group faceCard.cannotHaveAbility:hidden"}}>
+                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasAdvantage1 disabled=true}}</div>
+                                {{input value=faceCard.advantage1 disabled=faceCard.cannotHaveAbility class="form-control"}}
                             </div>
-                            <div class="input-group">
-                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasPower3 disabled=true}}</div>
-                                {{input value=faceCard.power3 class="form-control"}}
+                            <div {{bind-attr class=":input-group faceCard.cannotHaveAbility:hidden"}}>
+                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasAdvantage2 disabled=true}}</div>
+                                {{input value=faceCard.advantage2 disabled=faceCard.cannotHaveAbility class="form-control"}}
+                            </div>
+                            <div {{bind-attr class=":input-group faceCard.cannotHaveAbility:hidden"}}>
+                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasAdvantage3 disabled=true}}</div>
+                                {{input value=faceCard.advantage3 disabled=faceCard.cannotHaveAbility class="form-control"}}
                             </div>
                         </div>
                         {{/each}}

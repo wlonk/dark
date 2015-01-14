@@ -1,5 +1,2 @@
-[ ] Add face card power name
-[ ] Rename power fields
-[ ] Disallow powers without at least 5 in related face card
 [ ] Add disguise tracker
 [ ] Add wound tracker
