@@ -1,4 +1,3 @@
-[ ] Make suits be named correctly (inc. unicode suit symbols?)
 [ ] Add face card power name
 [ ] Rename power fields
 [ ] Disallow powers without at least 5 in related face card

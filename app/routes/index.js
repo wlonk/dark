@@ -4,28 +4,28 @@ export default Ember.Route.extend({
     model: function () {
         var sheet = this.store.createRecord('sheet', {name: "Thief"});
 
-        var spades = this.store.createRecord('suit', {sheet: sheet, name: "Spades"});
+        var spades = this.store.createRecord('suit', {sheet: sheet, name: "Finesse (♠︎)"});
         this.store.createRecord('aceCard', {suit: spades});
         this.store.createRecord('faceCard', {name: "King", suit: spades});
         this.store.createRecord('faceCard', {name: "Queen", suit: spades});
         this.store.createRecord('faceCard', {name: "Jack", suit: spades});
         this.store.createRecord('baseCard', {suit: spades});
 
-        var hearts = this.store.createRecord('suit', {sheet: sheet, name: "Hearts"});
+        var hearts = this.store.createRecord('suit', {sheet: sheet, name: "Mettle (♥︎)"});
         this.store.createRecord('aceCard', {suit: hearts});
         this.store.createRecord('faceCard', {name: "King", suit: hearts});
         this.store.createRecord('faceCard', {name: "Queen", suit: hearts});
         this.store.createRecord('faceCard', {name: "Jack", suit: hearts});
         this.store.createRecord('baseCard', {suit: hearts});
 
-        var clubs = this.store.createRecord('suit', {sheet: sheet, name: "Clubs"});
+        var clubs = this.store.createRecord('suit', {sheet: sheet, name: "Force (♣︎)"});
         this.store.createRecord('aceCard', {suit: clubs});
         this.store.createRecord('faceCard', {name: "King", suit: clubs});
         this.store.createRecord('faceCard', {name: "Queen", suit: clubs});
         this.store.createRecord('faceCard', {name: "Jack", suit: clubs});
         this.store.createRecord('baseCard', {suit: clubs});
 
-        var diamonds = this.store.createRecord('suit', {sheet: sheet, name: "Diamonds"});
+        var diamonds = this.store.createRecord('suit', {sheet: sheet, name: "Guile (♦︎)"});
         this.store.createRecord('aceCard', {suit: diamonds});
         this.store.createRecord('faceCard', {name: "King", suit: diamonds});
         this.store.createRecord('faceCard', {name: "Queen", suit: diamonds});
