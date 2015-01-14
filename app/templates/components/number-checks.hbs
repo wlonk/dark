@@ -1,7 +1,11 @@
+<ul class="list-inline">
 {{#each value in values}}
+    <li>
     {{view "value-checkbox" checked=value.checked disabled=value.disabled model=model value=value.value}}
     {{unbound value.value}}
     {{#unless value.last}}
         &raquo;
     {{/unless}}
+    </li>
 {{/each}}
+</ul>

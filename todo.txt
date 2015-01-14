@@ -3,7 +3,6 @@
 [ ] Add checkboxes to power fields on face cards
 [ ] Add face card power name
 [ ] Rename power fields
-[ ] Fix checkbox series compression-on-re-render bug
 [ ] Add face card value integrity observer
 [ ] Add disguise tracker
 [ ] Add wound tracker
