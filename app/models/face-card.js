@@ -8,6 +8,12 @@ export default DS.Model.extend({
     power2: DS.attr('string'),
     power3: DS.attr('string'),
 
+    maxIntegrity: function () {
+        if (this.get('max') < this.get('value')) {
+            this.set('value', this.get('max'));
+        }
+    }.observes('suit.baseCards.value'),
+
     max: function () {
         return Math.min(
             parseInt(this.get('suit.baseCards.value')),

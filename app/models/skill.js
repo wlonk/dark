@@ -9,7 +9,7 @@ export default DS.Model.extend({
     acc: DS.attr('boolean'),
 
     accIntegrity: function () {
-        if (!(this.get('apt') || this.get('edu') || this.get('exp'))) {
+        if (this.get('accDisabled')) {
             this.set('acc', false);
         }
     }.observes('apt', 'edu', 'exp'),
