@@ -20,27 +20,28 @@
         {{#each suit in suits}}
         {{#with suit}}
             <div class="col-md-6">
-                <div class="suit">
-                    <h3>{{name}}</h3>
-                    <div>
-                        Ace:
-                        {{!--{{input type="number" min=0 max=2 value=ace.value}}--}}
-                        {{number-checks model=ace min=0 max=2}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>{{name}}</h3>
                     </div>
-                    {{#each faceCard in faceCards}}
-                    <div>
-                        {{faceCard.name}}:
-                        {{number-checks model=faceCard min=4 max=10}}
-                        <br>
-                        {{! Powers: need to do checkboxes }}
-                        {{input value=faceCard.power1}}
-                        {{input value=faceCard.power2}}
-                        {{input value=faceCard.power3}}
-                    </div>
-                    {{/each}}
-                    <div>
-                        Base Cards:
-                        {{number-checks model=baseCards min=4 max=10}}
+                    <div class="panel-body">
+                        <div>
+                            Ace:
+                            {{number-checks model=ace min=0 max=2}}
+                        </div>
+                        {{#each faceCard in faceCards}}
+                        <div>
+                            {{faceCard.name}}:
+                            {{number-checks model=faceCard min=4 max=10}}
+                            {{input value=faceCard.power1}}
+                            {{input value=faceCard.power2}}
+                            {{input value=faceCard.power3}}
+                        </div>
+                        {{/each}}
+                        <div>
+                            Base Cards:
+                            {{number-checks model=baseCards min=4 max=10}}
+                        </div>
                     </div>
                 </div>
             </div>
