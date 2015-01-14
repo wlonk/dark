@@ -28,7 +28,7 @@
                     {{#each faceCard in faceCards}}
                     <div>
                         {{faceCard.name}}:
-                        {{input type="number" value=faceCard.value min=4 max=faceCard.max}} max={{faceCard.max}}
+                        {{number-checks model=faceCard}}
                         <br>
                         {{! Powers: need to do checkboxes }}
                         {{input value=faceCard.power1}}
@@ -38,7 +38,6 @@
                     {{/each}}
                     <div>
                         Base Cards:
-                        {{!--{{input type="number" value=baseCards.value min=4 max=baseCards.max}} max={{baseCards.max}}--}}
                         {{number-checks model=baseCards}}
                     </div>
                 </div>
