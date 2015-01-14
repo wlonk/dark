@@ -8,6 +8,12 @@ export default DS.Model.extend({
     exp: DS.attr('boolean'),
     acc: DS.attr('boolean'),
 
+    accIntegrity: function () {
+        if (!(this.get('apt') || this.get('edu') || this.get('exp'))) {
+            this.set('acc', false);
+        }
+    }.observes('apt', 'edu', 'exp'),
+
     accDisabled: function () {
         return !(this.get('apt') || this.get('edu') || this.get('exp'));
     }.property('apt', 'edu', 'exp'),
