@@ -7,15 +7,9 @@ export default DS.Model.extend({
     faceCards: DS.hasMany('faceCard'),
     baseCards: DS.belongsTo('baseCard'),
 
-    /* Cannot pass arguments from template, so this is a no-go. But logic is
-     * correct. */
-    baseCardDisabled: function (index) {
-        return index > this.get('baseCards.value') + 1;
-    },
-
-    /* Cannot pass arguments from template, so this is a no-go. But logic is
-     * correct. */
-    faceCardDisabled: function (index, faceCard) {
-        return index > Math.min(this.get('baseCards.value'), faceCard.get('value') + 1);
-    }
+    totalXp: function () {
+        return this.get('faceCards').reduce(function (a, b) {
+            return a + b.get('totalXp');
+        }, 0) + this.get('baseCards.totalXp') + this.get('ace.totalXp');
+    }.property('baseCards.totalXp', 'faceCards.@each.totalXp', 'ace.totalXp')
 });

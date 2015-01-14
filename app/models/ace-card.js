@@ -1,11 +1,10 @@
 import DS from "ember-data";
 
 export default DS.Model.extend({
+    value: DS.attr('number', {defaultValue: 0}),
     suit: DS.belongsTo('suit'),
-    check1: DS.attr('boolean', {default: false}),
-    check2: DS.attr('boolean', {default: false}),
 
-    check2Disabled: function () {
-        return !(this.get('check1'));
-    }.property('check1')
+    totalXp: function () {
+        return parseInt(this.get('value'));
+    }.property('value')
 });
