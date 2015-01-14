@@ -1,6 +1,6 @@
 {{#each value in values}}
     {{view "value-checkbox" checked=value.checked disabled=value.disabled model=model value=value.value}}
-    {{value.value}}
+    {{unbound value.value}}
     {{#unless value.last}}
         &raquo;
     {{/unless}}

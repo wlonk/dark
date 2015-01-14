@@ -10,7 +10,7 @@ export default Ember.Component.extend({
         var clickableMax = this.get('model.max');
         var current = this.get('model.value');
         var max = this.get('max');
-        var arr = Array.apply(null, Array(max - min)).map(function (_, i) {return i + min + 1;});
+        var arr = _.range(min + 1, max + 1);
         return arr.map(function (e) {
             return {
                 value: e,
