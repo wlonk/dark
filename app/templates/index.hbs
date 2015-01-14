@@ -38,7 +38,8 @@
                     {{/each}}
                     <div>
                         Base Cards:
-                        {{input type="number" value=baseCards.value min=4 max=baseCards.max}} max={{baseCards.max}}
+                        {{!--{{input type="number" value=baseCards.value min=4 max=baseCards.max}} max={{baseCards.max}}--}}
+                        {{number-checks model=baseCards}}
                     </div>
                 </div>
             </div>
