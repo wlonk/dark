@@ -21,10 +21,22 @@ export default DS.Model.extend({
         );
     }.property('suit.baseCards.value', 'value'),
 
+    hasPower1: function () {
+        return !!this.get('power1');
+    }.property('power1'),
+
+    hasPower2: function () {
+        return !!this.get('power2');
+    }.property('power2'),
+
+    hasPower3: function () {
+        return !!this.get('power3');
+    }.property('power3'),
+
     totalXp: function () {
-        var power1 = !!this.get('power1') ? 1 : 0;
-        var power2 = !!this.get('power2') ? 1 : 0;
-        var power3 = !!this.get('power3') ? 1 : 0;
+        var power1 = this.get('hasPower1') ? 1 : 0;
+        var power2 = this.get('hasPower2') ? 1 : 0;
+        var power3 = this.get('hasPower3') ? 1 : 0;
         var powerSum = power1 + power2 + power3;
         return parseInt(this.get('value')) + powerSum - 4;
     }.property('value', 'power1', 'power2', 'power3')

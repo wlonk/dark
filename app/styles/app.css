@@ -2,10 +2,6 @@ html, body {
     margin: 20px;
 }
 
-input[type=text] {
-    width: 9em;
-}
-
 td h3 {
     text-align: right;
     font-size: 18px;

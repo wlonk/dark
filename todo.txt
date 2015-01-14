@@ -1,6 +1,5 @@
 [ ] Make suits be named correctly (inc. unicode suit symbols?)
 [ ] Make ace display correctly ([ ] >> [ ] Ace: 11)
-[ ] Add checkboxes to power fields on face cards
 [ ] Add face card power name
 [ ] Rename power fields
 [ ] Add disguise tracker
