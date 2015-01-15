@@ -30,11 +30,8 @@ export default DS.Model.extend({
     }.observes('ability'),
 
     max: function () {
-        return Math.min(
-            parseInt(this.get('suit.baseCards.value')),
-            parseInt(this.get('value')) + 1
-        );
-    }.property('suit.baseCards.value', 'value'),
+        return parseInt(this.get('suit.baseCards.value'));
+    }.property('suit.baseCards.value'),
 
     cannotHaveAbility: function () {
         return this.get('value') < 5;
