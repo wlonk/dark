@@ -1,2 +1,7 @@
 [ ] Add disguise tracker
 [ ] Add wound tracker
+[ ] Improve styling:
+    [ ] Grey more than checkbox (perhaps also allow more clickable area?)
+    [ ] Blue the disabled checkboxes on attributes
+    [ ] Faded red for red suits?
+    [ ] Make suit boxes flow correctly (all above the fold if possible)
