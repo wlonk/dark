@@ -5,3 +5,6 @@
     [ ] Blue the disabled checkboxes on attributes
     [ ] Faded red for red suits?
     [ ] Make suit boxes flow correctly (all above the fold if possible)
+[ ] Add multi-sheet routing
+[ ] Add user accounts
+[ ] Add backend storage
