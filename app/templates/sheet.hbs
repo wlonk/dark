@@ -1,0 +1,105 @@
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            {{input value=name id="name" class="form-control"}}
+        </div>
+        <div class="form-group">
+            <label for="look">Look:</label>
+            {{input value=look id="look" class="form-control"}}
+        </div>
+        <div class="form-group">
+            <label for="totalXp">Total XP:</label>
+            {{totalXp}}
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-lg-10">
+        <h2>Suits</h2>
+        <div class="row">
+        {{#each suit in suits}}
+        {{#with suit}}
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>{{name}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            Ace:
+                            {{ace-checks model=ace min=0 max=2}}
+                        </div>
+                        {{#each faceCard in faceCards}}
+                        <div class="face-card">
+                            {{faceCard.name}}:
+                            {{number-checks model=faceCard min=4 max=10}}
+                            <div {{bind-attr class="faceCard.cannotHaveAbility:hidden"}}>
+                                {{input value=faceCard.ability disabled=faceCard.cannotHaveAbility class="form-control"}}
+                            </div>
+                            <div {{bind-attr class=":input-group faceCard.cannotHaveAbility:hidden"}}>
+                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasAdvantage1 disabled=true}}</div>
+                                {{input value=faceCard.advantage1 disabled=faceCard.cannotHaveAbility class="form-control"}}
+                            </div>
+                            <div {{bind-attr class=":input-group faceCard.cannotHaveAbility:hidden"}}>
+                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasAdvantage2 disabled=true}}</div>
+                                {{input value=faceCard.advantage2 disabled=faceCard.cannotHaveAbility class="form-control"}}
+                            </div>
+                            <div {{bind-attr class=":input-group faceCard.cannotHaveAbility:hidden"}}>
+                                <div class="input-group-addon">{{input type="checkbox" checked=faceCard.hasAdvantage3 disabled=true}}</div>
+                                {{input value=faceCard.advantage3 disabled=faceCard.cannotHaveAbility class="form-control"}}
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div>
+                            Base Cards:
+                            {{number-checks model=baseCards min=4 max=10}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/with}}
+        {{/each}}
+        </div>
+    </div>
+
+    <div class="col-lg-2">
+        <h2>Skills</h2>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Apt</th>
+                    <th>Edu</th>
+                    <th>Exp</th>
+                    <th></th>
+                    <th>Acc</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each skillgroup in skillGroups}}
+                {{#with skillgroup}}
+                <tr>
+                    <td colspan="6">
+                        <h3>{{name}}</h3>
+                    </td>
+                </tr>
+                    {{#each skill in skills}}
+                    {{#with skill}}
+                    <tr>
+                        <td>{{name}}:</td>
+                        <td>{{input type="checkbox" checked=apt}}</td>
+                        <td>{{input type="checkbox" checked=edu}}</td>
+                        <td>{{input type="checkbox" checked=exp}}</td>
+                        <td>&ge;</td>
+                        <td>{{input type="checkbox" checked=acc disabled=accDisabled}}</td>
+                    </tr>
+                    {{/with}}
+                    {{/each}}
+                {{/with}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
