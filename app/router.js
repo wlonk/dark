@@ -6,7 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    this.route("sheet");
+    this.resource('sheets', {path: '/sheets'}, function () {
+        this.route('new', {path: '/new'});
+    });
+    this.resource('sheet', {path: '/sheets/:sheet_id'});
 });
 
 export default Router;
