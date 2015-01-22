@@ -3,6 +3,9 @@
 <ul>
     <li>{{#link-to 'sheets.new'}}New{{/link-to}}</li>
 {{#each sheet in sheets}}
-    <li>{{#link-to 'sheet' sheet.id}}{{sheet.name}}{{/link-to}}</li>
+    <li>
+        {{#link-to 'sheet' sheet.id}}{{sheet.name}}{{/link-to}}
+        ({{sheet.totalXp}}xp)
+    </li>
 {{/each}}
 </ul>
