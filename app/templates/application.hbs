@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -9,6 +9,15 @@
             </button>
             {{#link-to "index" class="navbar-brand"}}Brand{{/link-to}}
         </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                {{#if session.isAuthenticated}}
+                    <a class="btn" {{ action 'invalidateSession' }}>Logout</a>
+                {{else}}
+                    <a class="btn" {{ action 'authenticateSession' }}>Login</a>
+                {{/if}}
+            </li>
+        </ul>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
         </div><!-- /.navbar-collapse -->
