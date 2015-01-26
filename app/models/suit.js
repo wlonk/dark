@@ -5,11 +5,11 @@ export default DS.Model.extend({
     sheet: DS.belongsTo('sheet'),
     ace: DS.belongsTo('aceCard'),
     faceCards: DS.hasMany('faceCard'),
-    baseCards: DS.belongsTo('baseCard'),
+    baseCard: DS.belongsTo('baseCard'),
 
     totalXp: function () {
         return this.get('faceCards').reduce(function (a, b) {
             return a + b.get('totalXp');
-        }, 0) + this.get('baseCards.totalXp') + this.get('ace.totalXp');
-    }.property('baseCards.totalXp', 'faceCards.@each.totalXp', 'ace.totalXp')
+        }, 0) + this.get('baseCard.totalXp') + this.get('ace.totalXp');
+    }.property('baseCard.totalXp', 'faceCards.@each.totalXp', 'ace.totalXp')
 });

@@ -13,7 +13,7 @@ export default DS.Model.extend({
         if (this.get('max') < this.get('value')) {
             this.set('value', this.get('max'));
         }
-    }.observes('suit.baseCards.value'),
+    }.observes('suit.baseCard.value'),
 
     abilityIntegrity: function () {
         if (this.get('cannotHaveAbility')) {
@@ -30,8 +30,8 @@ export default DS.Model.extend({
     }.observes('ability'),
 
     max: function () {
-        return parseInt(this.get('suit.baseCards.value'));
-    }.property('suit.baseCards.value'),
+        return parseInt(this.get('suit.baseCard.value'));
+    }.property('suit.baseCard.value'),
 
     cannotHaveAbility: function () {
         return this.get('value') < 5;
