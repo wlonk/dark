@@ -2,7 +2,7 @@ import DS from "ember-data";
 
 export default DS.Model.extend({
     name: DS.attr('string'),
-    suit: DS.belongsTo('suit'),
+    suit: DS.belongsTo('suit', {async: true}),
     value: DS.attr('number', {defaultValue: 4}),
     ability: DS.attr('string'),
     advantage1: DS.attr('string'),

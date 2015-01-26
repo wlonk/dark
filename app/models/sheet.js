@@ -1,11 +1,11 @@
 import DS from "ember-data";
 
 export default DS.Model.extend({
-    user: DS.belongsTo('user'),
+    user: DS.belongsTo('user', {async: true}),
     name: DS.attr('string'),
     look: DS.attr('string'),
-    suits: DS.hasMany('suit'),
-    skillGroups: DS.hasMany('skillGroup'),
+    suits: DS.hasMany('suit', {async: true}),
+    skillGroups: DS.hasMany('skillGroup', {async: true}),
 
     totalXp: function () {
         return this.get('suits').reduce(function (a, b) {

@@ -2,7 +2,7 @@ import DS from "ember-data";
 
 export default DS.Model.extend({
     name: DS.attr('string'),
-    skillGroup: DS.belongsTo('skillGroup'),
+    skillGroup: DS.belongsTo('skillGroup', {async: true}),
     apt: DS.attr('boolean'),
     edu: DS.attr('boolean'),
     exp: DS.attr('boolean'),

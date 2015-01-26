@@ -2,8 +2,8 @@ import DS from "ember-data";
 
 export default DS.Model.extend({
     name: DS.attr('string'),
-    sheet: DS.belongsTo('sheet'),
-    skills: DS.hasMany('skill'),
+    sheet: DS.belongsTo('sheet', {async: true}),
+    skills: DS.hasMany('skill', {async: true}),
 
     totalXp: function () {
         return this.get('skills').reduce(function (a, b) {

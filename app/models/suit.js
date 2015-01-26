@@ -2,10 +2,10 @@ import DS from "ember-data";
 
 export default DS.Model.extend({
     name: DS.attr('string'),
-    sheet: DS.belongsTo('sheet'),
-    ace: DS.belongsTo('aceCard'),
-    faceCards: DS.hasMany('faceCard'),
-    baseCard: DS.belongsTo('baseCard'),
+    sheet: DS.belongsTo('sheet', {async: true}),
+    ace: DS.belongsTo('aceCard', {async: true}),
+    faceCards: DS.hasMany('faceCard', {async: true}),
+    baseCard: DS.belongsTo('baseCard', {async: true}),
 
     totalXp: function () {
         return this.get('faceCards').reduce(function (a, b) {
