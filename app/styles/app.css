@@ -9,3 +9,16 @@ td h3 {
     margin-top: 5px;
     margin-bottom: 2px;
 }
+
+#alpha {
+    color: #F00;
+    position: absolute;
+    top: 5px;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg);
+    left: 130px;
+    font-size: smaller;
+}
