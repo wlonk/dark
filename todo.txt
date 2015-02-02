@@ -5,5 +5,3 @@
     [ ] Blue the disabled checkboxes on attributes (More likely: swap disabled logic on face card abilities, so you need to check the box to enable text.)
     [ ] Faded red for red suits?
     [ ] Make suit boxes flow correctly (all above the fold if possible)
-[ ] Add user accounts
-[ ] Add backend storage
