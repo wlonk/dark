@@ -4,28 +4,37 @@ export default DS.Model.extend({
     name: DS.attr('string'),
     suit: DS.belongsTo('suit', {async: true}),
     value: DS.attr('number', {defaultValue: 4}),
-    ability: DS.attr('string'),
-    advantage1: DS.attr('string'),
-    advantage2: DS.attr('string'),
-    advantage3: DS.attr('string'),
+    ability: DS.attr('string', {defaultValue: ''}),
+    advantage1: DS.attr('string', {defaultValue: ''}),
+    advantage2: DS.attr('string', {defaultValue: ''}),
+    advantage3: DS.attr('string', {defaultValue: ''}),
 
     maxIntegrity: function () {
-        if (this.get('max') < this.get('value')) {
-            this.set('value', this.get('max'));
+        var max = this.get('max');
+        var value = this.get('value');
+        if (max < value) {
+            this.set('value', max);
         }
     }.observes('suit.baseCard.value'),
 
     abilityIntegrity: function () {
-        if (this.get('cannotHaveAbility')) {
-            this.set('ability', '');
+        var nullValue = '';
+        if (this.get('cannotHaveAbility') && this.get('ability') !== nullValue) {
+            this.set('ability', nullValue);
         }
     }.observes('value'),
 
     advantagesIntegrity: function () {
-        if (!this.get('hasAbility')) {
-            this.set('advantage1', '');
-            this.set('advantage2', '');
-            this.set('advantage3', '');
+        var nullValue = '';
+        var anyAdvantages = _.any([
+            this.get('advantage1') !== nullValue,
+            this.get('advantage2') !== nullValue,
+            this.get('advantage3') !== nullValue
+        ]);
+        if (!this.get('hasAbility') && anyAdvantages) {
+            this.set('advantage1', nullValue);
+            this.set('advantage2', nullValue);
+            this.set('advantage3', nullValue);
         }
     }.observes('ability'),
 

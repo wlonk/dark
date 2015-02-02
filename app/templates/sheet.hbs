@@ -1,18 +1,25 @@
 <div class="row">
-    <form class="form-inline">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            {{input value=name id="name" class="form-control"}}
-        </div>
-        <div class="form-group">
-            <label for="look">Look:</label>
-            {{input value=look id="look" class="form-control"}}
-        </div>
-        <div class="form-group">
-            <label for="totalXp">Total XP:</label>
-            {{totalXp}}
-        </div>
-    </form>
+    <div class="col-xs-11">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                {{input value=name id="name" class="form-control"}}
+            </div>
+            <div class="form-group">
+                <label for="look">Look:</label>
+                {{input value=look id="look" class="form-control"}}
+            </div>
+            <div class="form-group">
+                <label for="totalXp">Total XP:</label>
+                {{totalXp}}
+            </div>
+        </form>
+    </div>
+    <div class="col-sx-1">
+        {{#if session.isAuthenticated}}
+            <a {{bind-attr class=":btn :btn-default isAnyDirty:btn-warning:disabled"}} {{action 'saveSheet'}}>Save</a>
+        {{/if}}
+    </div>
 </div>
 
 <div class="row">

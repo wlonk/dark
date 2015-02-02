@@ -9,5 +9,11 @@ export default DS.Model.extend({
         return this.get('skills').reduce(function (a, b) {
             return a + b.get('totalXp');
         }, 0);
-    }.property('skills.@each.apt', 'skills.@each.edu', 'skills.@each.exp', 'skills.@each.acc')
+    }.property('skills.@each.apt', 'skills.@each.edu', 'skills.@each.exp', 'skills.@each.acc'),
+
+    hasDirtySkill: function () {
+        return _.any(this.get('skills').map(function (skill) {
+            return skill.get('isDirty');
+        }));
+    }.property('skills.@each.isDirty')
 });

@@ -7,6 +7,22 @@ export default DS.Model.extend({
     faceCards: DS.hasMany('faceCard', {async: true}),
     baseCard: DS.belongsTo('baseCard', {async: true}),
 
+    hasDirtyElements: function () {
+        return _.any(
+            _.flatten([
+                this.get('ace.isDirty'),
+                this.get('faceCards').map(function (faceCard) {
+                    return faceCard.get('isDirty');
+                }),
+                this.get('baseCard.isDirty')
+            ])
+        );
+    }.property(
+        'ace.isDirty',
+        'faceCards.@each.isDirty',
+        'baseCard.isDirty'
+    ),
+
     totalXp: function () {
         return this.get('faceCards').reduce(function (a, b) {
             return a + b.get('totalXp');

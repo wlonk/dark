@@ -13,5 +13,24 @@ export default DS.Model.extend({
         }, 0) + this.get('skillGroups').reduce(function (a, b) {
             return a + b.get('totalXp');
         }, 0);
-    }.property('suits.@each.totalXp', 'skillGroups.@each.totalXp')
+    }.property('suits.@each.totalXp', 'skillGroups.@each.totalXp'),
+
+    isAnyDirty: function () {
+        var _this = this;
+        return _.any(
+            _.flatten([
+                _this.get('isDirty'),
+                _this.get('skillGroups').map(function (skillGroup) {
+                    return skillGroup.get('hasDirtySkill');
+                }),
+                _this.get('suits').map(function (suit) {
+                    return suit.get('hasDirtyElements');
+                })
+            ])
+        );
+    }.property(
+        'isDirty',
+        'suits.@each.hasDirtyElements',
+        'skillGroups.@each.hasDirtySkill'
+    )
 });
