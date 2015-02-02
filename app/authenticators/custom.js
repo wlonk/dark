@@ -7,6 +7,7 @@ export default Base.extend({
     resourceName: 'user',
     tokenAttributeName: '',
     identificationAttributeName: '',
+    authenticatedUserId: null,
 
     restore: function (data) {
         var _this = this;
@@ -34,7 +35,7 @@ export default Base.extend({
                 Ember.run(function() {
                     resolve(response);
                 });
-            }, function(xhr, status, error) {
+            }, function(xhr) {
                 Ember.run(function() {
                     reject(xhr.responseJSON || xhr.responseText);
                 });
@@ -42,12 +43,16 @@ export default Base.extend({
         });
     },
 
-    invalidate: function (data) {
+    invalidate: function () {
         return new Ember.RSVP.resolve();
     },
 
-    makeRequest: function(data, resolve, reject) {
-        var url = [config.APP.API_HOST, config.APP.API_NAMESPACE, this.serverTokenEndpoint].filter(function (e) {
+    makeRequest: function(data) {
+        var url = [
+            config.APP.API_HOST,
+            config.APP.API_NAMESPACE,
+            this.serverTokenEndpoint
+        ].filter(function (e) {
             return !!e;
         }).join("/");
         return Ember.$.ajax({

@@ -27,6 +27,4 @@ app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 
 app.import('bower_components/underscore/underscore.js');
 
-app.import('bower_components/ember-localstorage-adapter/localstorage_adapter.js');
-
 module.exports = app.toTree();
