@@ -1,3 +1,10 @@
+[ ] Add per-user access rights
+    [ ] Disable inputs when user doesn't have access.
+[ ] Add slug paths
+[ ] Add per-user paths
+[ ] Add slow-operations spinner overlay.
+[ ] Add delete-a-sheet
+
 [ ] Add disguise tracker
 [ ] Add wound tracker
 [ ] Improve styling:
@@ -5,10 +12,3 @@
     [ ] Blue the disabled checkboxes on attributes (More likely: swap disabled logic on face card abilities, so you need to check the box to enable text.)
     [ ] Faded red for red suits?
     [ ] Make suit boxes flow correctly (all above the fold if possible)
-[ ] Add per-user access rights
-    [ ] Disable inputs when user doesn't have access.
-[ ] Add slug paths
-[ ] Add per-user paths
-[ ] Add slow-operations spinner overlay.
-[ ] Add delete-a-sheet
-[ ] Add keyboard shortcuts

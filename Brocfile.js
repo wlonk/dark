@@ -27,4 +27,6 @@ app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 
 app.import('bower_components/underscore/underscore.js');
 
+app.import('bower_components/keymaster/keymaster.js');
+
 module.exports = app.toTree();
