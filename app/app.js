@@ -13,4 +13,14 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
+Ember.Controller.reopen({
+    sessionUser: function () {
+        if (this.get('session.isAuthenticated')) {
+            return this.store.find('user', this.get('session.content.user_id'));
+        } else {
+            return null;
+        }
+    }.property('session.content')
+});
+
 export default App;

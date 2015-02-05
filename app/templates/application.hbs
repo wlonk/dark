@@ -10,6 +10,9 @@
             {{#link-to "index" class="navbar-brand"}}Rogues' Gallery<span id="alpha">alpha</span>{{/link-to}}
         </div>
         <ul class="nav navbar-nav navbar-right">
+            {{#if session.isAuthenticated}}
+                <li class="navbar-text">Logged in as {{sessionUser.username}}.</li>
+            {{/if}}
             <li>
                 {{#if session.isAuthenticated}}
                     <a class="btn" {{ action 'invalidateSession' }}>Logout</a>
