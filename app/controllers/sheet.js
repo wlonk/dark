@@ -33,7 +33,10 @@ export default Ember.ObjectController.extend(
                     suit.get('ace.content').save();
                     suit.get('baseCard.content').save();
                 });
-                this.get('model').save().then(this.hideModalOverlay);
+                this.get('model').save().then(
+                    this.hideModalOverlay,  // @TODO: display success message
+                    this.hideModalOverlay  // @TODO: display error message
+                );
             }
         }
     }
