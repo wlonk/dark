@@ -22,3 +22,8 @@ td h3 {
     left: 130px;
     font-size: smaller;
 }
+
+.modal-backdrop {
+    opacity: 0.5;
+    z-index: 10000;
+}

@@ -2,7 +2,6 @@
     [ ] Disable inputs when user doesn't have access.
 [ ] Add slug paths
 [ ] Add per-user paths
-[ ] Add slow-operations spinner overlay.
 [ ] Add delete-a-sheet
 
 [ ] Add disguise tracker
