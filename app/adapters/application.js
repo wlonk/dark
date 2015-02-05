@@ -10,5 +10,5 @@ export default DRFAdapter.extend({
         } else {
             return {};
         }
-    }.property('session.token')
+    }.property().volatile()  // This means "just recalculate it each time you access it."
 });
