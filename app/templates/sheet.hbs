@@ -5,11 +5,11 @@
         <form class="form-inline">
             <div class="form-group">
                 <label for="name">Name:</label>
-                {{input value=name id="name" class="form-control"}}
+                {{input value=name id="name" class="form-control" disabled=cannotEditSheet}}
             </div>
             <div class="form-group">
                 <label for="look">Look:</label>
-                {{input value=look id="look" class="form-control"}}
+                {{input value=look id="look" class="form-control" disabled=cannotEditSheet}}
             </div>
             <div class="form-group">
                 <label for="totalXp">Total XP:</label>
@@ -18,7 +18,7 @@
         </form>
     </div>
     <div class="col-sx-1">
-        {{#if session.isAuthenticated}}
+        {{#if showSaveButton}}
             <a {{bind-attr class=":btn :btn-default isAnyDirty:btn-warning:disabled"}} {{action 'saveSheet'}}>Save</a>
         {{/if}}
     </div>
@@ -29,18 +29,17 @@
         <h2>Suits</h2>
         <div class="row">
         {{#each suit in suits}}
-        {{#with suit}}
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>{{name}}</h3>
+                        <h3>{{suit.name}}</h3>
                     </div>
                     <div class="panel-body">
                         <div>
                             Ace:
-                            {{ace-checks model=ace min=0 max=2}}
+                            {{ace-checks model=suit.ace min=0 max=2 disabled=cannotEditSheet}}
                         </div>
-                        {{#each faceCard in faceCards}}
+                        {{#each faceCard in suit.faceCards}}
                         <div class="face-card">
                             {{faceCard.name}}:
                             {{number-checks model=faceCard min=4 max=10}}
@@ -63,12 +62,11 @@
                         {{/each}}
                         <div>
                             Base Cards:
-                            {{number-checks model=baseCard min=4 max=10}}
+                            {{number-checks model=suit.baseCard min=4 max=10 disabled=cannotEditSheet}}
                         </div>
                     </div>
                 </div>
             </div>
-        {{/with}}
         {{/each}}
         </div>
     </div>
@@ -87,26 +85,22 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each skillgroup in skillGroups}}
-                {{#with skillgroup}}
-                <tr>
-                    <td colspan="6">
-                        <h3>{{name}}</h3>
-                    </td>
-                </tr>
-                    {{#each skill in skills}}
-                    {{#with skill}}
+                {{#each skillGroup in skillGroups}}
                     <tr>
-                        <td>{{name}}:</td>
-                        <td>{{input type="checkbox" checked=apt}}</td>
-                        <td>{{input type="checkbox" checked=edu}}</td>
-                        <td>{{input type="checkbox" checked=exp}}</td>
-                        <td>&ge;</td>
-                        <td>{{input type="checkbox" checked=acc disabled=accDisabled}}</td>
+                        <td colspan="6">
+                            <h3>{{skillGroup.name}}</h3>
+                        </td>
                     </tr>
-                    {{/with}}
+                    {{#each skill in skillGroup.skills}}
+                        <tr>
+                            <td>{{skill.name}}:</td>
+                            <td>{{input type="checkbox" checked=skill.apt disabled=cannotEditSheet}}</td>
+                            <td>{{input type="checkbox" checked=skill.edu disabled=cannotEditSheet}}</td>
+                            <td>{{input type="checkbox" checked=skill.exp disabled=cannotEditSheet}}</td>
+                            <td>&ge;</td>
+                            <td>{{input type="checkbox" checked=skill.acc disabled=skill.accDisabled}}</td>
+                        </tr>
                     {{/each}}
-                {{/with}}
                 {{/each}}
             </tbody>
         </table>

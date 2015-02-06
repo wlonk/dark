@@ -13,7 +13,7 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
-Ember.Controller.reopen({
+Ember.ControllerMixin.reopen({
     sessionUser: function () {
         if (this.get('session.isAuthenticated')) {
             return this.store.find('user', this.get('session.content.user_id'));

@@ -4,6 +4,7 @@ export default Ember.Component.extend({
     model: null,
     min: null,
     max: null,
+    disabled: null,
 
     values: function () {
         var min = this.get('min');
@@ -16,10 +17,10 @@ export default Ember.Component.extend({
             return {
                 display: labels[i],
                 value: e,
-                disabled: e > clickableMax,
+                disabled: this.get('disabled') || e > clickableMax,
                 checked: e <= current,
                 last: e === max
             };
-        });
+        }.bind(this));
     }.property('model.max', 'model.value')
 });

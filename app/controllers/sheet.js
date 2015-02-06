@@ -4,6 +4,16 @@ import KeymasterMixin from "../mixins/keymaster";
 export default Ember.ObjectController.extend(
     KeymasterMixin,
     {
+        cannotEditSheet: function () {
+            // We use != rather than !== here because we may get the ID in
+            // various forms (string, int) and want to use JS's stupid powers.
+            return this.get('session.content.user_id') != this.get('model.user.id');
+        }.property('sessionUser.content.user_id', 'model.user.id'),
+
+        showSaveButton: function () {
+            return !this.get('cannotEditSheet');
+        }.property('cannotEditSheet'),
+
         hideModalOverlay: function () {
             Ember.$('.modal-backdrop').height(0);
         },

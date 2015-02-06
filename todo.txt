@@ -1,4 +1,5 @@
-[ ] Disable inputs when user doesn't have access.
+[X] Disable inputs when user doesn't have access.
+    [ ] Allow user to edit new sheet without refresh.
 [ ] Add slug paths
 [ ] Add per-user paths
 [ ] Add delete-a-sheet

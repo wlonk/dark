@@ -15,6 +15,9 @@ export default DS.Model.extend({
     }.observes('apt', 'edu', 'exp'),
 
     accDisabled: function () {
+        if (this.get('skillGroup.sheet.cannotEditSheet')) {
+            return false;
+        }
         return !(this.get('apt') || this.get('edu') || this.get('exp'));
     }.property('apt', 'edu', 'exp'),
 
