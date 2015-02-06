@@ -10,3 +10,7 @@
         text.)
     [ ] Faded red for red suits?
     [ ] Make suit boxes flow correctly (all above the fold if possible)
+
+[ ] Add user profile pages
+    [ ] Add sheet lists there, not on index.
+[ ] Paginate endpoints and UI.
