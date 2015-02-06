@@ -3,6 +3,10 @@
 
 [ ] Add disguise tracker
 [ ] Add wound tracker
+[ ] Add notes section on sheet
+[ ] Add available XP on sheet
+[ ] Turn "look" into a text area
+
 [ ] Improve styling:
     [ ] Grey more than checkbox (perhaps also allow more clickable area?)
     [ ] Blue the disabled checkboxes on attributes (More likely: swap disabled
