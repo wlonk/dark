@@ -8,7 +8,13 @@
 <ul>
 {{#each sheet in model}}
     <li>
-        {{#link-to 'sheet' sheet.id}}{{sheet.name}}{{/link-to}}
+        {{#link-to 'sheet' sheet.id}}
+            {{#if sheet.name}}
+                {{sheet.name}}
+            {{else}}
+                &lt;unnamed thief&gt;
+            {{/if}}
+        {{/link-to}}
         ({{sheet.totalXp}}xp)
     </li>
 {{/each}}
