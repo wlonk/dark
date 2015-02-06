@@ -47,6 +47,12 @@ export default Ember.ObjectController.extend(
                     this.hideModalOverlay,  // @TODO: display success message
                     this.hideModalOverlay  // @TODO: display error message
                 );
+            },
+
+            deleteSheet: function () {
+                this.get('model').destroyRecord().then(function () {
+                    this.transitionTo('index');  // @TODO: display success message
+                }.bind(this));
             }
         }
     }

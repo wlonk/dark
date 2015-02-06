@@ -1,6 +1,5 @@
 [ ] Add slug paths
 [ ] Add per-user paths
-[ ] Add delete-a-sheet
 
 [ ] Add disguise tracker
 [ ] Add wound tracker
