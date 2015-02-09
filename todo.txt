@@ -1,10 +1,6 @@
-[ ] Add slug paths
-[ ] Add per-user paths
-
 [ ] Add disguise tracker
 [ ] Add wound tracker
 [ ] Add notes section on sheet
-[ ] Add available XP on sheet
 [ ] Turn "look" into a text area
 
 [ ] Improve styling:

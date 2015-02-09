@@ -4,6 +4,7 @@ export default DS.Model.extend({
     user: DS.belongsTo('user', {async: true}),
     name: DS.attr('string'),
     look: DS.attr('string'),
+    available_xp: DS.attr('number'),
     suits: DS.hasMany('suit', {async: true}),
     skillGroups: DS.hasMany('skillGroup', {async: true}),
 
