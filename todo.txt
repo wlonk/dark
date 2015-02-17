@@ -1,5 +1,6 @@
 [ ] Add disguise tracker
 [ ] Add wound tracker
+[ ] Add face card power and augments model
 [ ] Add notes section on sheet
 [ ] Turn "look" into a text area
 
@@ -16,3 +17,5 @@
     [ ] Create account
     [ ] Edit account details
     [ ] Delete account
+[ ] Add Twitter OAuth
+[ ] Add backend integrity checks?
