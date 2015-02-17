@@ -12,3 +12,7 @@
     [ ] Make suit boxes flow correctly (all above the fold if possible)
 
 [ ] Paginate endpoints and UI.
+[ ] Account management
+    [ ] Create account
+    [ ] Edit account details
+    [ ] Delete account
