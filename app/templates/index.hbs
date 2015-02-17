@@ -1,21 +1,13 @@
 <h1>
-    Sheets!
-    {{#if session.isAuthenticated}}
-        {{#link-to 'sheets.new' class="btn btn-default"}}New{{/link-to}}
-    {{/if}}
+    Users!
 </h1>
 
 <ul>
-{{#each sheet in model}}
+{{#each user in model}}
     <li>
-        {{#link-to 'sheet' sheet.id}}
-            {{#if sheet.name}}
-                {{sheet.name}}
-            {{else}}
-                &lt;unnamed thief&gt;
-            {{/if}}
+        {{#link-to 'user' user.id}}
+            {{user.username}}
         {{/link-to}}
-        ({{sheet.totalXp}}xp)
     </li>
 {{/each}}
 </ul>

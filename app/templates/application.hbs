@@ -11,6 +11,7 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             {{#if session.isAuthenticated}}
+                <li>{{#link-to 'sheets.new' class="btn"}}New Thief{{/link-to}}</li>
                 <li class="navbar-text">Logged in as {{sessionUser.username}}.</li>
             {{/if}}
             <li>

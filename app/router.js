@@ -10,6 +10,8 @@ Router.map(function() {
         this.route('new', {path: '/new'});
     });
     this.resource('sheet', {path: '/sheets/:sheet_id'});
+    this.resource('users', {path: '/users'});
+    this.resource('user', {path: '/users/:user_id'});
     this.resource('login');
 });
 
