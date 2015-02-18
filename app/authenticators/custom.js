@@ -3,7 +3,7 @@ import Base from 'simple-auth/authenticators/base';
 import config from '../config/environment';
 
 export default Base.extend({
-    serverTokenEndpoint: 'api-token-auth/',
+    serverTokenEndpoint: 'token-auth/',
     resourceName: 'user',
     tokenAttributeName: '',
     identificationAttributeName: '',
