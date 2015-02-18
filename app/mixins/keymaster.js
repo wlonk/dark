@@ -6,9 +6,9 @@ export default Ember.Mixin.create({
         key.filter = function (event) {
             // We want shortcuts globally for now; this may eventually change.
             return true;
-        }
+        };
         _.each(this.shortcuts, function (action, shortcut) {
-            console.log("Binding " + action + " to " + shortcut)
+            console.log("Binding " + action + " to " + shortcut);
             key(shortcut, "all", function (event, handler) {
                 event.preventDefault();
                 this.send(action);
