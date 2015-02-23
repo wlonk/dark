@@ -3,10 +3,20 @@
 </h1>
 
 <ul>
-{{#each sheet in model.sheets}}
+{{#each sheet in sheets}}
     <li>
         {{#link-to 'sheet' sheet.id}}{{#if sheet.name}}{{sheet.name}}{{else}}&lt;unnamed thief&gt;{{/if}}{{/link-to}}
         ({{sheet.totalXp}}xp)
     </li>
 {{/each}}
 </ul>
+
+<div class="btn-group" role="group">
+    {{#if sheets.content.meta.previous}}
+    {{#link-to 'user' model.id (query-params page=sheets.content.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
+    {{/if}}
+
+    {{#if sheets.content.meta.next}}
+    {{#link-to 'user' model.id (query-params page=sheets.content.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
+    {{/if}}
+</div>

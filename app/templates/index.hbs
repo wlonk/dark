@@ -11,3 +11,13 @@
     </li>
 {{/each}}
 </ul>
+
+<div class="btn-group" role="group">
+    {{#if model.meta.previous}}
+    {{#link-to 'index' (query-params page=model.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
+    {{/if}}
+
+    {{#if model.meta.next}}
+    {{#link-to 'index' (query-params page=model.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
+    {{/if}}
+</div>

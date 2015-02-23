@@ -13,8 +13,9 @@
     [ ] Make suit boxes flow correctly (all above the fold if possible)
         To do this, make two columns, each of which has a single full-width
         thing in it; move to next column after displaying half of the Suits?
+    [ ] Make pagination non-ugly
+    [ ] Push more logic to backend to speed up display
 
-[ ] Paginate endpoints and UI.
 [ ] Account management
     [ ] Create account
     [ ] Edit account details
