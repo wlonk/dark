@@ -15,6 +15,7 @@
         thing in it; move to next column after displaying half of the Suits?
     [ ] Make pagination non-ugly
     [ ] Push more logic to backend to speed up display
+    [ ] Check out http://flexboxin5.com/
 
 [ ] Account management
     [ ] Create account
