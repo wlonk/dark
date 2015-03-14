@@ -2,24 +2,26 @@
 
 <div class="row">
     <div class="col-xs-10">
-        <form class="form-inline">
-            <div class="form-group">
+        <div class="row">
+            <div class="col-sm-4">
                 <label for="name">Name:</label>
                 {{input value=name id="name" class="form-control" disabled=cannotEditSheet}}
             </div>
-            <div class="form-group">
-                <label for="look">Look:</label>
-                {{input value=look id="look" class="form-control" disabled=cannotEditSheet}}
-            </div>
-            <div class="form-group">
+            <div class="col-sm-4">
                 <label for="availableXp">Available XP:</label>
                 {{input value=available_xp type="number" class="form-control" disabled=cannotEditSheet}}
             </div>
-            <div class="form-group">
+            <div class="col-sm-4">
                 <label for="totalXp">Total XP:</label>
                 {{totalXp}}
             </div>
-        </form>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="look">Look:</label>
+                {{textarea value=look id="look" class="form-control" disabled=cannotEditSheet}}
+            </div>
+        </div>
     </div>
     <div class="col-sx-2">
         {{#if showSaveButton}}

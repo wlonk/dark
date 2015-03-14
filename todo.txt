@@ -2,7 +2,6 @@
 [ ] Add wound tracker
 [ ] Add face card power and augments model
 [ ] Add notes section on sheet
-[ ] Turn "look" into a text area
 
 [ ] Improve styling:
     [ ] Grey more than checkbox (perhaps also allow more clickable area?)

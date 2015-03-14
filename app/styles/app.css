@@ -1,3 +1,7 @@
+textarea {
+    resize: vertical;
+}
+
 td h3 {
     text-align: right;
     font-size: 18px;
