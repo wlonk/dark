@@ -13,6 +13,8 @@ Router.map(function() {
     this.resource('users', {path: '/users'});
     this.resource('user', {path: '/users/:user_id'});
     this.resource('login');
+    this.resource('register');
+    this.resource('register-confirmation');
 });
 
 export default Router;

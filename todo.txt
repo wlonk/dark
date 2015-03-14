@@ -18,7 +18,6 @@
     [ ] Check out http://flexboxin5.com/
 
 [ ] Account management
-    [ ] Create account
     [ ] Edit account details
     [ ] Delete account
 [ ] Add Twitter OAuth

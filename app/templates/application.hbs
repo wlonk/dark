@@ -21,6 +21,11 @@
                     <a class="btn" {{ action 'authenticateSession' }}>Login</a>
                 {{/if}}
             </li>
+            {{#unless session.isAuthenticated}}
+                <li>
+                    {{#link-to 'register' class="btn"}}Register{{/link-to}}
+                </li>
+            {{/unless}}
         </ul>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
