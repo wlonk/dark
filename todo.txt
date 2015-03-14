@@ -1,7 +1,6 @@
 [ ] Add disguise tracker
 [ ] Add wound tracker
 [ ] Add face card power and augments model
-[ ] Add notes section on sheet
 
 [ ] Improve styling:
     [ ] Grey more than checkbox (perhaps also allow more clickable area?)
@@ -11,7 +10,6 @@
     [ ] Faded red for red suits?
     [ ] Make pagination non-ugly
     [ ] Push more logic to backend to speed up display
-    [ ] Check out http://flexboxin5.com/
 
 [ ] Account management
     [ ] Edit account details
