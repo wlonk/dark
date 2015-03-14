@@ -27,3 +27,12 @@ td h3 {
     opacity: 0.5;
     z-index: 10000;
 }
+
+.flexbox-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
