@@ -3,7 +3,6 @@
 [ ] Add face card power and augments model
 
 [ ] Improve styling:
-    [ ] Grey more than checkbox (perhaps also allow more clickable area?)
     [ ] Make pagination non-ugly
     [ ] Push more logic to backend to speed up display
 
