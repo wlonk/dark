@@ -19,16 +19,5 @@ export default DS.Model.extend({
             return false;
         }
         return !(this.get('apt') || this.get('edu') || this.get('exp'));
-    }.property('apt', 'edu', 'exp'),
-
-    totalXp: function () {
-        return [
-            this.get('apt'), 
-            this.get('edu'), 
-            this.get('exp'), 
-            this.get('acc')
-        ].reduce(function (a, b) {
-            return a + (b ? 1 : 0);
-        }, 0);
-    }.property('apt', 'edu', 'exp', 'acc')
+    }.property('apt', 'edu', 'exp')
 });

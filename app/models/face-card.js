@@ -60,13 +60,5 @@ export default DS.Model.extend({
 
     hasAdvantage3: function () {
         return !!this.get('advantage3');
-    }.property('advantage3'),
-
-    totalXp: function () {
-        var advantage1 = this.get('hasAdvantage1') ? 1 : 0;
-        var advantage2 = this.get('hasAdvantage2') ? 1 : 0;
-        var advantage3 = this.get('hasAdvantage3') ? 1 : 0;
-        var advantageSum = advantage1 + advantage2 + advantage3;
-        return parseInt(this.get('value')) + advantageSum - 4;
-    }.property('value', 'advantage1', 'advantage2', 'advantage3')
+    }.property('advantage3')
 });

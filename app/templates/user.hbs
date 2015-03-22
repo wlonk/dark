@@ -6,7 +6,7 @@
 {{#each sheet in sheets}}
     <li>
         {{#link-to 'sheet' sheet.id}}{{#if sheet.name}}{{sheet.name}}{{else}}&lt;unnamed thief&gt;{{/if}}{{/link-to}}
-        ({{sheet.totalXp}}xp)
+        ({{sheet.total_xp}}xp)
     </li>
 {{/each}}
 </ul>

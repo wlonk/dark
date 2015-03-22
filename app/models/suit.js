@@ -21,11 +21,5 @@ export default DS.Model.extend({
         'ace.isDirty',
         'faceCards.@each.isDirty',
         'baseCard.isDirty'
-    ),
-
-    totalXp: function () {
-        return this.get('faceCards').reduce(function (a, b) {
-            return a + b.get('totalXp');
-        }, 0) + this.get('baseCard.totalXp') + this.get('ace.totalXp');
-    }.property('baseCard.totalXp', 'faceCards.@each.totalXp', 'ace.totalXp')
+    )
 });

@@ -4,7 +4,6 @@
 
 [ ] Improve styling:
     [ ] Make pagination non-ugly
-    [ ] Push more logic to backend to speed up display
 
 [ ] Account management
     [ ] Edit account details
