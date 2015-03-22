@@ -14,6 +14,11 @@ td h3 {
     margin-bottom: 2px;
 }
 
+.panel-heading.Hearts,
+.panel-heading.Diamonds {
+    color: #990000;
+}
+
 #alpha {
     color: #F00;
     position: absolute;

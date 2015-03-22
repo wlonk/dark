@@ -40,7 +40,7 @@
         {{#each suit in suits}}
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div {{bind-attr class="suit.name :panel-heading"}}>
                         <h3>{{suit.name}}</h3>
                     </div>
                     <div class="panel-body">
