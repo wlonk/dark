@@ -45,3 +45,11 @@ td h3 {
     align-content: flex-start;
     align-items: flex-start;
 }
+
+.overlay-checkbox {
+    cursor: not-allowed;
+    height: 1em;
+    position: absolute;
+    top: 0.75em;
+    width: 1em;
+}

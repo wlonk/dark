@@ -4,9 +4,6 @@
 
 [ ] Improve styling:
     [ ] Grey more than checkbox (perhaps also allow more clickable area?)
-    [ ] Blue the disabled checkboxes on attributes (More likely: swap disabled
-        logic on face card abilities, so you need to check the box to enable
-        text.)
     [ ] Make pagination non-ugly
     [ ] Push more logic to backend to speed up display
 
