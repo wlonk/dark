@@ -1,22 +1,39 @@
-<h1>
-    Sheets!
-</h1>
+<h1>{{displayName}}</h1>
 
-<ul>
-{{#each sheet in sheets}}
-    <li>
-        {{#link-to 'sheet' sheet.id}}{{#if sheet.name}}{{sheet.name}}{{else}}&lt;unnamed thief&gt;{{/if}}{{/link-to}}
-        ({{sheet.total_xp}}xp)
-    </li>
-{{/each}}
-</ul>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Thieves</h2>
+        <ul>
+        {{#each sheet in sheets}}
+            <li>
+                {{#link-to 'sheet' sheet.id}}{{#if sheet.name}}{{sheet.name}}{{else}}&lt;unnamed thief&gt;{{/if}}{{/link-to}}
+                ({{sheet.total_xp}}xp)
+            </li>
+        {{/each}}
+        </ul>
 
-<div class="btn-group" role="group">
-    {{#if sheets.content.meta.previous}}
-    {{#link-to 'user' model.id (query-params page=sheets.content.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
-    {{/if}}
+        <div class="btn-group" role="group">
+            {{#if sheets.content.meta.previous}}
+            {{#link-to 'user' model.id (query-params page=sheets.content.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
+            {{/if}}
 
-    {{#if sheets.content.meta.next}}
-    {{#link-to 'user' model.id (query-params page=sheets.content.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
-    {{/if}}
+            {{#if sheets.content.meta.next}}
+            {{#link-to 'user' model.id (query-params page=sheets.content.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="col-md-6">
+        {{#if currentUser}}
+            <h2>Profile controls</h2>
+
+            <label for="displayName">Display name</label>
+            {{input value=displayName class="form-control" id="displayName"}}
+
+            <label for="email">Email address</label>
+            {{input value=email class="form-control" id="email"}}
+
+            <hr>
+            <button class="btn btn-danger">Delete account</button>
+        {{/if}}
+    </div>
 </div>

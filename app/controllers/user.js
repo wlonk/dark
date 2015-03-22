@@ -15,5 +15,9 @@ export default Ember.ObjectController.extend({
             user: this.get('model.id'),
             page: page
         });
-    }.property('model', 'page')
+    }.property('model', 'page'),
+
+    currentUser: function () {
+        return this.get("model.id") == this.get("session.content.user_id");
+    }.property().volatile()
 });
