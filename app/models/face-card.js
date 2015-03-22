@@ -5,9 +5,9 @@ export default DS.Model.extend({
     suit: DS.belongsTo('suit', {async: true}),
     value: DS.attr('number', {defaultValue: 4}),
     ability: DS.attr('string', {defaultValue: ''}),
-    advantage1: DS.attr('string', {defaultValue: ''}),
-    advantage2: DS.attr('string', {defaultValue: ''}),
-    advantage3: DS.attr('string', {defaultValue: ''}),
+    advantage_1: DS.attr('string', {defaultValue: ''}),
+    advantage_2: DS.attr('string', {defaultValue: ''}),
+    advantage_3: DS.attr('string', {defaultValue: ''}),
 
     maxIntegrity: function () {
         var max = this.get('max');
@@ -27,14 +27,14 @@ export default DS.Model.extend({
     advantagesIntegrity: function () {
         var nullValue = '';
         var anyAdvantages = _.any([
-            this.get('advantage1') !== nullValue,
-            this.get('advantage2') !== nullValue,
-            this.get('advantage3') !== nullValue
+            this.get('advantage_1') !== nullValue,
+            this.get('advantage_2') !== nullValue,
+            this.get('advantage_3') !== nullValue
         ]);
         if (!this.get('hasAbility') && anyAdvantages) {
-            this.set('advantage1', nullValue);
-            this.set('advantage2', nullValue);
-            this.set('advantage3', nullValue);
+            this.set('advantage_1', nullValue);
+            this.set('advantage_2', nullValue);
+            this.set('advantage_3', nullValue);
         }
     }.observes('ability'),
 
@@ -51,14 +51,14 @@ export default DS.Model.extend({
     }.property('ability'),
 
     hasAdvantage1: function () {
-        return !!this.get('advantage1');
-    }.property('advantage1'),
+        return !!this.get('advantage_1');
+    }.property('advantage_1'),
 
     hasAdvantage2: function () {
-        return !!this.get('advantage2');
-    }.property('advantage2'),
+        return !!this.get('advantage_2');
+    }.property('advantage_2'),
 
     hasAdvantage3: function () {
-        return !!this.get('advantage3');
-    }.property('advantage3')
+        return !!this.get('advantage_3');
+    }.property('advantage_3')
 });
