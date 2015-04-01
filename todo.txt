@@ -5,6 +5,12 @@
 [ ] Improve styling:
     [ ] Make pagination non-ugly
 
+[ ] Improve paths:
+    [ ] /users
+    [ ] /users/:username
+    [ ] /users/:username/sheets
+    [ ] /users/:username/sheets/:sheet_slug
+
 [ ] Account management
     [ ] Edit account details
     [ ] Delete account
