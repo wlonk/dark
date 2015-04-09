@@ -1,23 +1,10 @@
 <h1>
-    Users!
+    The Rogues' Gallery
 </h1>
 
-<ul>
-{{#each user in model}}
-    <li>
-        {{#link-to 'user' user.id}}
-            {{user.username}}
-        {{/link-to}}
-    </li>
-{{/each}}
-</ul>
+<p>
+    Welcome! Here, we have some of the scummiest and most villainous characters
+    in all of the City on the Serpentine. Enjoy.
+</p>
 
-<div class="btn-group" role="group">
-    {{#if model.meta.previous}}
-    {{#link-to 'index' (query-params page=model.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
-    {{/if}}
-
-    {{#if model.meta.next}}
-    {{#link-to 'index' (query-params page=model.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
-    {{/if}}
-</div>
+{{#link-to 'users'}}See the users{{/link-to}}

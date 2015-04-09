@@ -1,0 +1,23 @@
+<h1>
+    Users!
+</h1>
+
+<ul>
+{{#each user in model}}
+    <li>
+        {{#link-to 'user' user.username}}
+            {{user.username}}
+        {{/link-to}}
+    </li>
+{{/each}}
+</ul>
+
+<div class="btn-group" role="group">
+    {{#if model.meta.previous}}
+    {{#link-to 'users' (query-params page=model.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
+    {{/if}}
+
+    {{#if model.meta.next}}
+    {{#link-to 'users' (query-params page=model.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
+    {{/if}}
+</div>
