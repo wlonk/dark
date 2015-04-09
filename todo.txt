@@ -1,16 +1,18 @@
-[ ] Add disguise tracker
-[ ] Add wound tracker
-[ ] Add face card power and augments model
+[ ] For Alpha release:
+    [ ] Add disguise tracker
+    [ ] Add wound tracker
+    [ ] Improve styling:
+        [ ] Make pagination non-ugly
+    [ ] Limit sheets list to sheets of active users
+    [ ] Display errors on form submissions
+    [ ] Add backend integrity checks
 
-[ ] Improve styling:
-    [ ] Make pagination non-ugly
-
-[ ] Limit sheets list to sheets of active users
-[ ] Display errors on form submissions
-
-[ ] Improve paths:
-    [ ] /users/:username/sheets
-    [ ] /users/:username/sheets/:sheet_slug
-
-[ ] Add Twitter OAuth
-[ ] Add backend integrity checks?
+[ ] For Beta release:
+    [ ] Update "alpha" badge to "beta"
+    [ ] Add face card power and augments model
+    [ ] Improve paths:
+        [ ] /users/:username/sheets
+        [ ] /users/:username/sheets/:sheet_slug
+    [ ] Add user avatars
+    [ ] Add breadcrumbs
+    [ ] Add Twitter OAuth
