@@ -5,12 +5,14 @@
 [ ] Improve styling:
     [ ] Make pagination non-ugly
 
+[ ] Limit sheets list to sheets of active users
+[ ] Display errors on form submissions
+
 [ ] Improve paths:
     [ ] /users/:username/sheets
     [ ] /users/:username/sheets/:sheet_slug
 
 [ ] Account management
     [ ] Edit account details
-    [ ] Delete account
 [ ] Add Twitter OAuth
 [ ] Add backend integrity checks?

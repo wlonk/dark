@@ -18,5 +18,21 @@ export default Ember.ObjectController.extend({
 
     currentUser: function () {
         return this.get("model.id") == this.get("session.content.user_id");
-    }.property().volatile()
+    }.property().volatile(),
+
+    actions: {
+        update: function () {
+            this.get("model").save();
+        },
+
+        destroy: function () {
+            var conf = confirm("Are you sure?");
+            if (!conf) {
+                return;
+            }
+            this.get("model").destroyRecord();
+            this.get('session').invalidate();
+            this.transitionToRoute('index');
+        }
+    }
 });
