@@ -12,7 +12,5 @@
     [ ] /users/:username/sheets
     [ ] /users/:username/sheets/:sheet_slug
 
-[ ] Account management
-    [ ] Edit account details
 [ ] Add Twitter OAuth
 [ ] Add backend integrity checks?
