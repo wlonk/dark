@@ -4,7 +4,6 @@
     [ ] Improve styling:
         [ ] Make pagination non-ugly
     [ ] Limit sheets list to sheets of active users
-    [ ] Display errors on form submissions
     [ ] Add backend integrity checks
     [ ] Restructure backend to be flatter
 
