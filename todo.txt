@@ -8,6 +8,8 @@
     [ ] Restructure backend to be flatter
 
 [ ] For Beta release:
+    [ ] Password forgot/reset
+    [ ] Email verification
     [ ] Update "alpha" badge to "beta"
     [ ] Add face card power and augments model
     [ ] Improve paths:
