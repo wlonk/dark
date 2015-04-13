@@ -1,4 +1,5 @@
 [ ] For Alpha release:
+    [ ] Resolve CORS issues
     [ ] Add disguise tracker
     [ ] Add wound tracker
     [ ] Improve styling:
