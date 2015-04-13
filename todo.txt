@@ -2,8 +2,6 @@
     [ ] Resolve CORS issues
     [ ] Add disguise tracker
     [ ] Add wound tracker
-    [ ] Improve styling:
-        [ ] Make pagination non-ugly
     [ ] Limit sheets list to sheets of active users
     [ ] Add backend integrity checks
     [ ] Restructure backend to be flatter

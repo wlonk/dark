@@ -14,16 +14,33 @@
         {{/each}}
         </ul>
 
-        <div class="btn-group" role="group">
-            {{#if sheets.content.meta.previous}}
-            {{#link-to 'user' model.id (query-params page=sheets.content.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
-            {{/if}}
-
-            {{#if sheets.content.meta.next}}
-            {{#link-to 'user' model.id (query-params page=sheets.content.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
-            {{/if}}
-        </div>
+        {{#if pages}}
+            <nav>
+                <ul class="pagination">
+                    <li {{bind-attr class="sheets.meta.previous::disabled"}}>
+                        {{#if sheets.meta.previous}}
+                            {{#link-to 'user' model.username (query-params page=sheets.meta.previous)}}&laquo;{{/link-to}}
+                        {{else}}
+                            <span>&laquo;</span>
+                        {{/if}}
+                    </li>
+                    {{#each page in pages}}
+                    <li {{bind-attr class="page.isCurrent:active"}}>
+                        {{#link-to 'user' model.username (query-params page=page.number)}}{{page.number}}{{/link-to}}
+                    </li>
+                    {{/each}}
+                    <li {{bind-attr class="sheets.meta.next::disabled"}}>
+                        {{#if sheets.meta.next}}
+                            {{#link-to 'user' model.username (query-params page=sheets.meta.next)}}&raquo;{{/link-to}}
+                        {{else}}
+                            <span>&raquo;</span>
+                        {{/if}}
+                    </li>
+                </ul>
+            </nav>
+        {{/if}}
     </div>
+
     <div class="col-md-6">
         {{#if currentUser}}
             <h2>Profile controls</h2>

@@ -12,12 +12,30 @@
 {{/each}}
 </ul>
 
-<div class="btn-group" role="group">
-    {{#if model.meta.previous}}
-    {{#link-to 'users' (query-params page=model.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
-    {{/if}}
+{{#if pages}}
+    <nav>
+        <ul class="pagination">
+            <li {{bind-attr class="model.meta.previous::disabled"}}>
+                {{#if model.meta.previous}}
+                    {{#link-to 'users' (query-params page=model.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
+                {{else}}
+                    <span>&laquo;</span>
+                {{/if}}
+            </li>
 
-    {{#if model.meta.next}}
-    {{#link-to 'users' (query-params page=model.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
-    {{/if}}
-</div>
+            {{#each page in pages}}
+                <li {{bind-attr class="page.isCurrent:active"}}>
+                    {{#link-to 'users' (query-params page=page.number)}}{{page.number}}{{/link-to}}
+                </li>
+            {{/each}}
+
+            <li {{bind-attr class="model.meta.next::disabled"}}>
+                {{#if model.meta.next}}
+                {{#link-to 'users' (query-params page=model.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
+                {{else}}
+                    <span>&raquo;</span>
+                {{/if}}
+            </li>
+        </ul>
+    </nav>
+{{/if}}

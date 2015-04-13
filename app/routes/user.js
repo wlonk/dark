@@ -13,5 +13,18 @@ export default Ember.Route.extend({
                 return result.content[0];
             }
         });
+    },
+    afterModel: function (model, transition) {
+        var controller = this.controllerFor("user");
+        var page = transition.queryParams.page || 1;
+        this.store.find(
+            "sheet", 
+            {
+                user: model.get("id"), 
+                page: page
+            }
+        ).then(function (sheets) {
+            controller.set("sheets", sheets);
+        });
     }
 });
