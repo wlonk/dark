@@ -19,6 +19,19 @@ module.exports = function(environment) {
     }
   };
 
+  // This should eventually be per-deployment-context
+  var script_src = (environment == 'development') ? "'self' 'unsafe-eval'" : "'self'";
+  ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': script_src,
+      'font-src': "'self' http://fonts.gstatic.com",
+      'connect-src': "'self' http://localhost:8000",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'media-src': "'self'"
+  };
+  ENV.contentSecurityPolicyHeader = 'Content-Security-Policy';
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
