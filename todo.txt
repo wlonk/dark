@@ -1,10 +1,10 @@
 [ ] For Alpha release:
-    [ ] Resolve CORS issues
     [ ] Add disguise tracker
     [ ] Add wound tracker
     [ ] Limit sheets list to sheets of active users
     [ ] Add backend integrity checks
     [ ] Restructure backend to be flatter
+    [ ] Confirm status of CORS issues
 
 [ ] For Beta release:
     [ ] Password forgot/reset
