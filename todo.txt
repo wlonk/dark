@@ -17,3 +17,8 @@
     [ ] Add user avatars
     [ ] Add breadcrumbs
     [ ] Add Twitter OAuth
+
+[ ] Future plans:
+    [ ] Add character avatars
+    [ ] Add PDF export
+    [ ] Verify mobile, tablet, fullscreen usability
