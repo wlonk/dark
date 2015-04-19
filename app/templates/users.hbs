@@ -17,7 +17,7 @@
         <ul class="pagination">
             <li {{bind-attr class="model.meta.previous::disabled"}}>
                 {{#if model.meta.previous}}
-                    {{#link-to 'users' (query-params page=model.meta.previous) class="btn btn-default"}}&laquo;{{/link-to}}
+                    {{#link-to 'users' (query-params page=model.meta.previous)}}&laquo;{{/link-to}}
                 {{else}}
                     <span>&laquo;</span>
                 {{/if}}
@@ -31,7 +31,7 @@
 
             <li {{bind-attr class="model.meta.next::disabled"}}>
                 {{#if model.meta.next}}
-                {{#link-to 'users' (query-params page=model.meta.next) class="btn btn-default"}}&raquo;{{/link-to}}
+                {{#link-to 'users' (query-params page=model.meta.next)}}&raquo;{{/link-to}}
                 {{else}}
                     <span>&raquo;</span>
                 {{/if}}
