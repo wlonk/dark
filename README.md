@@ -1,5 +1,13 @@
 # Dark
 
+| Service   | Status                                                                                       |
+|-----------|----------------------------------------------------------------------------------------------|
+| CircleCI  | [![Circle CI](https://circleci.com/gh/wlonk/dark_ui.svg?style=svg)][circleci]               |
+| Waffle.io | [![Waffle.io](https://badge.waffle.io/wlonk/dark_ui.png?label=ready&title=Ready)][waffleio] |
+
+[circleci]: https://circleci.com/gh/wlonk/dark_ui
+[waffleio]: https://waffle.io/wlonk/dark_ui
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
