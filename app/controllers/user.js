@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import DS from 'ember-data';
 
 export default Ember.ObjectController.extend({
     queryParams: ['page'],
@@ -26,13 +25,15 @@ export default Ember.ObjectController.extend({
         return _.range(minPage, maxPage + 1).map(function (e) {
             return {
                 number: e,
-                isCurrent: page == e
+                isCurrent: parseInt(page) === e
             };
         });
     }.property('page', 'sheets'),
 
     currentUser: function () {
-        return this.get('model.id') == this.get('session.content.user_id');
+        return (
+            parseInt(this.get('model.id')) === parseInt(this.get('session.content.user_id'))
+        );
     }.property().volatile(),
 
     actions: {

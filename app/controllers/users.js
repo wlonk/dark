@@ -20,7 +20,7 @@ export default Ember.ArrayController.extend({
         return _.range(minPage, maxPage + 1).map(function (e) {
             return {
                 number: e,
-                isCurrent: page == e
+                isCurrent: parseInt(page) === e
             };
         });
     }.property('model', 'normalizedPage')

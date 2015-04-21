@@ -33,10 +33,10 @@ export default Ember.Controller.extend({
             password: password
         };
         return _this.makeRequest(data).then(
-            function (response) {
+            function () {
                 _this.transitionToRoute('register-confirmation');
             },
-            function (xhr) {
+            function () {
             }
         );
     },
